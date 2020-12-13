@@ -1,0 +1,87 @@
+###Create Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "A0006",
+  "name" : "Kebab beef",
+  "price" : 35000,
+  "quantity" : 10
+
+}
+
+### Create Product Invalid
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "",
+  "name" : "",
+  "price" : 0,
+  "quantity" : -1
+
+}
+
+###Get Prodcut
+
+GET http://localhost:8080/api/products/A0002
+Accept: application/json
+
+###Get Prodcut invalid
+
+GET http://localhost:8080/api/products/salah
+Accept: application/json
+
+### Update Prdocut
+PUT http://localhost:8080/api/products/A0004
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Kebab Ok",
+  "price" : 10000,
+  "quantity" : 5
+}
+
+### Update Prdocut not Found
+PUT http://localhost:8080/api/products/A0005
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Kebab Biasa",
+  "price" : 10000,
+  "quantity" : 5
+}
+
+### Update Prdocut invalid request
+PUT http://localhost:8080/api/products/A0001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "",
+  "price" : 0,
+  "quantity" : 0
+}
+
+###delete product
+DELETE http://localhost:8080/api/products/1
+Accept: application/json
+
+###List Products
+
+GET http://localhost:8080/api/products
+Accept: application/json
+
+###List Products with size parameter
+
+GET http://localhost:8080/api/products?size=5
+Accept: application/json
+
+###List Products with size and page parameter
+
+GET http://localhost:8080/api/products?size=5&page=0
+Accept: application/json

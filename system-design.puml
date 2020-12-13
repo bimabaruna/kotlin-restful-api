@@ -1,0 +1,13 @@
+@startuml
+
+actor "User" as user
+node "kotlin RESTful API" {
+
+        component "Controller"
+
+
+}
+
+database "PostgreSQL" as database
+
+@enduml
